@@ -1,5 +1,9 @@
 #!/bin/sh
-sudo echo &&
+sudo apt-get update -y &&
+sudo apt-get upgrade -y &&
+sudo apt-get dist-upgrade -y &&
+sudo apt-get autoremove -y &&
+sudo apt-get install build-essential -y &&
 wget http://ffmpeg.org/releases/ffmpeg-4.0.2.tar.xz&&
 tar -xf ffmpeg-4.0.2.tar.xz &&
 cd ffmpeg-4.0.2 &&
@@ -33,4 +37,5 @@ sudo install -v -m644    doc/*.txt /usr/share/doc/ffmpeg-4.0.2 &&
 cd ..&&
 sudo rm -R ffmpeg-4.0.2 &&
 sudo rm ffmpeg-4.0.2.tar.xz &&
+sudo ldconfig -v &&
 sudo ldconfig
